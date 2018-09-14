@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.johnli.callback.client.autoconfigure.SpringAutoConfigure
+org.springframework.context.ApplicationListener=\
+com.johnli.callback.client.context.SpringReadyListener
