@@ -6,33 +6,33 @@ package com.johnli.callback.server.constant;
 public class JobConstant {
 
     /**
-     * 扫描任务间隔
+     * interval of scanning job
      */
-    public static final int SCAN_JOB_GAP_MILLSEC = 500;
+    public static final int SCAN_JOB_INTERVAL_MILLSEC = 500;
     /**
-     * 补偿任务间隔
+     * interval of compensation job
      */
-    public static final int COMPENSATION_JOB_GAP_MILLSEC = 1000;
+    public static final int COMPENSATION_JOB_INTERVAL_MILLSEC = 1000;
     /**
-     * 监控任务间隔
+     * interval of monitor job
      */
-    public static final int MONITOR_JOB_GAP_MILLSEC = 60000;
+    public static final int MONITOR_JOB_INTERVAL_MILLSEC = 60000;
 
     /**
-     * 任务首次执行延时
+     * interval for fist run of all jobs
      */
     public static final int JOB_DELAY_MILLSEC = 10000;
 
     /**
-     * 扫描任务开始间隔
+     * gap of head of the scanning time slot
      */
-    public static final int SCAN_START_GAP_MILLSEC = SCAN_JOB_GAP_MILLSEC;
+    public static final int SCAN_START_GAP_MILLSEC = SCAN_JOB_INTERVAL_MILLSEC;
     /**
-     * 扫描任务结束间隔
+     * gap of tail of the scanning time slot
      */
-    public static final int SCAN_END_GAP_MILLSEC = SCAN_JOB_GAP_MILLSEC / 2;
+    public static final int SCAN_END_GAP_MILLSEC = SCAN_JOB_INTERVAL_MILLSEC / 2;
     /**
-     * 补偿任务最长时间范围，单位小时
+     * max gap of compensation job's scanning time slot. unit: hour
      */
     public static final int MAX_COMPENSATION_HOURS = 240;
 

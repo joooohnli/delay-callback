@@ -34,7 +34,7 @@ public class CompensationJob extends AbstractJob {
     private DistributeService distributeService;
 
 
-    @Scheduled(fixedRate = JobConstant.COMPENSATION_JOB_GAP_MILLSEC, initialDelay = JobConstant.JOB_DELAY_MILLSEC)
+    @Scheduled(fixedRate = JobConstant.COMPENSATION_JOB_INTERVAL_MILLSEC, initialDelay = JobConstant.JOB_DELAY_MILLSEC)
     @Async("compensationJobExecutor")
     @Override
     public void scheduled() {

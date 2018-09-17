@@ -2,7 +2,7 @@ package com.johnli.callback.server.autoconfigure;
 
 import com.johnli.callback.server.autoconfigure.property.CallbackProperties;
 import com.johnli.callback.server.context.ContextHolder;
-import com.johnli.callback.server.util.OSUtils;
+import com.johnli.callback.server.util.OSUtil;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.leader.LeaderLatch;
 import org.apache.curator.framework.recipes.leader.LeaderLatchListener;
@@ -37,7 +37,7 @@ public class LeaderAutoConfiguration implements InitializingBean, DisposableBean
         }
         leaderLatch = new LeaderLatch(curatorClient,
                 PATH,
-                OSUtils.getServerIp() + "_" + UUID.randomUUID().toString());
+                OSUtil.getServerIp() + "_" + UUID.randomUUID().toString());
         leaderLatch.addListener(new LeaderLatchListener() {
             @Override
             public void isLeader() {

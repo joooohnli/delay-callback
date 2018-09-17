@@ -37,7 +37,7 @@ public class ScanJob extends AbstractJob {
     @Autowired
     private CallbackProperties callbackProperties;
 
-    @Scheduled(fixedRate = JobConstant.SCAN_JOB_GAP_MILLSEC, initialDelay = JobConstant.JOB_DELAY_MILLSEC)
+    @Scheduled(fixedRate = JobConstant.SCAN_JOB_INTERVAL_MILLSEC, initialDelay = JobConstant.JOB_DELAY_MILLSEC)
     @Async("scanJobExecutor")
     @Override
     public void scheduled() {

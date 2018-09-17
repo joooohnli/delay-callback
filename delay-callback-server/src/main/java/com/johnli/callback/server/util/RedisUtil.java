@@ -13,13 +13,13 @@ public class RedisUtil {
     /**
      * @param conn
      * @param lockKey
-     * @param acquireTimeout <=0时，非阻塞, 单位：ms
-     * @param lockExpireTime 单位：ms
+     * @param acquireTimeout <=0:none block. unit:ms
+     * @param lockExpireTime unit:ms
      * @return
      */
     public static String acquireLock(Jedis conn, String lockKey, long acquireTimeout, long lockExpireTime) {
         String identifier = UUID.randomUUID().toString();
-        // 非阻塞
+        // none block
         if (acquireTimeout <= 0) {
             if ("OK".equalsIgnoreCase(conn.set(lockKey, identifier, "NX", "PX", lockExpireTime))) {
                 return identifier;
@@ -50,10 +50,10 @@ public class RedisUtil {
     public static boolean releaseLock(Jedis conn, String lockKey, String identifier) {
         while (true) {
             conn.watch(lockKey);
-            //检查进程是否仍然持有锁
+            //check current thread still holds lock
             if (identifier.equals(conn.get(lockKey))) {
                 Transaction trans = conn.multi();
-                //释放锁，别的进程可以对这个lockName执行setnx成功，加锁
+                // release lock
                 trans.del(lockKey);
                 List<Object> results = trans.exec();
                 if (results == null|| results.size()==0) {

@@ -28,7 +28,7 @@ public class MonitorJob extends AbstractJob {
     @Autowired
     private DataService dataService;
 
-    @Scheduled(fixedRate = JobConstant.MONITOR_JOB_GAP_MILLSEC, initialDelay = JobConstant.JOB_DELAY_MILLSEC)
+    @Scheduled(fixedRate = JobConstant.MONITOR_JOB_INTERVAL_MILLSEC, initialDelay = JobConstant.JOB_DELAY_MILLSEC)
     @Async("monitorJobExecutor")
     @Override
     public void scheduled() {

@@ -14,11 +14,11 @@ import java.util.Date;
  */
 public class CallbackDetailPO implements Serializable, Validator {
     /**
-     * 未回调
+     * not being invoked
      */
     public static final int RETRY_TH_NOT_EXECUTE = -1;
     /**
-     * 已回调（正常回调，未重试）
+     * being invoked, not being retried
      */
     public static final int RETRY_TH_EXECUTEED = 0;
 
@@ -41,9 +41,9 @@ public class CallbackDetailPO implements Serializable, Validator {
     private String dubboContext;
 
     /**
-     * -1：未调用
-     * 0：已调用
-     * >0：重试次数
+     * -1：not being invoked
+     * 0：invoked
+     * >0：retry times
      */
     private int retryTh = RETRY_TH_NOT_EXECUTE;
 
