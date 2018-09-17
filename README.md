@@ -5,22 +5,26 @@ Designed to run specific code with a timer, which is a self-organising server wi
 
 ![delay-callback](https://user-images.githubusercontent.com/1615053/45608444-715ae880-ba85-11e8-8484-22494f1259a2.png)
 
-# 2.delay-callback-server
+# 2.Structure
+## delay-callback-server
 The server persists the registered callback data, ensuring that the callback can always be invoked with retry strategy, and it's stateless, which means it can be scaled out easily.
 
 ### Dependencies
 [dubbo](http://dubbo.apache.org/en-us)/spring cloud/zookeeper/redis
 
-# 3.delay-callback-client
+## delay-callback-client
 The client encapsulates callback server discovery and callback client registry, and provides a helper to easily write registration and callback code. See **client-demo** **Get started**.
 
 ### Dependencies
 dubbo/spring
 
-# 4.client-demo
+## delay-callback-interface
+common interfaces and objects of client and server
+
+## client-demo
 The demo shows how to use delay-callback-client to register callback and write callback logic.
 
-# 5.Getting started
+# 3.Getting started
 ### i.Start server
 ```
 cd delay-callback-server
@@ -69,8 +73,8 @@ You see, just like writing local java callback.
 
 ### iv.run your application
 
-# 6.Advanced usage
+# 4.Advanced usage
 // todo
 
-# 7.License
+# 5.License
 Under the Apache 2.0 license.
