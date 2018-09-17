@@ -47,8 +47,11 @@ mvn spring-boot:run
         params.add("hello");
         params.add("world");
 
+        // will callback in 3 seconds
+        int delaySeconds = 3;
+        
         // do register
-        RegisterResult register = DelayCallbackHelper.register(new CallbackParam(params, 10), new DelayCallback() {
+        RegisterResult register = DelayCallbackHelper.register(new CallbackParam(params, delaySeconds), new DelayCallback() {
             @Override
             public String alias() {
                 return "callback01";
