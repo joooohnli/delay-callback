@@ -2,10 +2,13 @@ package com.johnli.callback.client.utils;
 
 import java.util.Optional;
 
+/**
+ * @author qiang.li5  on 2018/1/12.
+ */
 public class EnvUtils {
 
     /**
-     * 推断启动main函数所在的class
+     * deduce class of main
      *
      * @return
      */
@@ -25,7 +28,7 @@ public class EnvUtils {
 
 
     /**
-     * 推断启动main函数所在的class的package
+     * deduce package of main
      *
      * @return
      */

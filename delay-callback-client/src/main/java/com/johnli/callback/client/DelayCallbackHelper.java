@@ -18,9 +18,9 @@ public class DelayCallbackHelper {
     private static final Logger LOGGER = LoggerFactory.getLogger(DelayCallbackHelper.class);
 
     /**
-     * @param callbackParam 参数
-     * @param delayCallback 实现回调业务
-     * @return 唯一ID
+     * @param callbackParam params
+     * @param delayCallback implementation of callback logic
+     * @return unique id
      */
     public static RegisterResult register(CallbackParam callbackParam, DelayCallback delayCallback) {
         RegisterResult registerResult = new RegisterResult();
@@ -58,9 +58,9 @@ public class DelayCallbackHelper {
     }
 
     /**
-     * 取消注册
+     * cancel registration
      *
-     * @param uid 唯一ID
+     * @param uid unique id
      * @return
      */
     public static UnRegisterResult unRegister(String uid) {

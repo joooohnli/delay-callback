@@ -10,7 +10,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 
@@ -30,10 +29,6 @@ public class SpringReadyListener implements ApplicationListener<ContextRefreshed
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-//        ApplicationContext applicationContext = event.getApplicationContext();
-//        if (applicationContext.getParent() == null) {
-//            return;
-//        }
         if (!overrided.compareAndSet(false, true)) {
             return;
         }

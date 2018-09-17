@@ -4,23 +4,25 @@ package com.johnli.callback.client;
 import com.johnli.callback.request.CallbackRequest;
 
 /**
- * <p>注意：若以<font color="red">匿名内部类</font>方式实现，方法体中禁止包含<font color="red">外部方法的局部变量</font>
+ * <p>Note：if the implementation is realised through <font color="red">anonymous inner class</font>, it's method can not include
+ * <font color="red">local variables of outer class</font>.
  *
  * @author johnli  2018-08-06 14:49
  */
 public interface DelayCallback {
     /**
-     * 定义该回调别名。须保证应用内唯一
+     * define alias of callback, you should make sure it is unique in your current application.
      *
-     * @return 非空串
+     * @return not empty
      */
     String alias();
 
     /**
-     * 回调处理
+     * dealing with callback
      *
-     * @param request 注册回调时的参数对象
-     * @return true，完成回调；false，表示回调失败，将进行重试（如有可重试次数）
+     * @param request params registered
+     * @return true: callback complete;
+     * false: callback failed, will retry if has available retry times.
      */
     boolean onCallback(CallbackRequest request);
 }
