@@ -11,21 +11,23 @@ The server persists the registered callback data, ensuring that the callback can
 ### Dependencies
 [dubbo](http://dubbo.apache.org/en-us)/spring cloud/zookeeper/redis
 
-### Deploy
-```
-cd delay-callback-server
-mvn spring-boot:run
-```
-
 # 3.delay-callback-client
-The client encapsulates callback server discovery and callback client registry, and provides a helper to easily write registration and callback code. See **client-demo**.
+The client encapsulates callback server discovery and callback client registry, and provides a helper to easily write registration and callback code. See **client-demo** **Get started**.
 
 ### Dependencies
 dubbo/spring
 
 # 4.client-demo
 The demo shows how to use delay-callback-client to register callback and write callback logic.
-### a.Add dependency
+
+# 5.Get started
+### i.Deploy server
+```
+cd delay-callback-server
+mvn spring-boot:run
+```
+
+### ii.Add dependency to your application
 ```
         <dependency>
             <groupId>com.johnli</groupId>
@@ -33,7 +35,7 @@ The demo shows how to use delay-callback-client to register callback and write c
             <version>1.0-SNAPSHOT</version>
         </dependency>
 ```
-### b.Write java code
+### iii.Write java code
 ```
         // params that will be delivered while callback
         List<String> params = new ArrayList<>();
@@ -64,5 +66,8 @@ The demo shows how to use delay-callback-client to register callback and write c
 ```
 You see, just like writing local java callback.
 
-# 5.License
+# 6.Advanced usage
+// todo
+
+# 7.License
 Under the Apache 2.0 license.
