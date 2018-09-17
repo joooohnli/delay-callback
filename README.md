@@ -20,10 +20,11 @@ dubbo/spring
 # 4.client-demo
 The demo shows how to use delay-callback-client to register callback and write callback logic.
 
-# 5.Get started
-### i.Deploy server
+# 5.Getting started
+### i.Start server
 ```
 cd delay-callback-server
+# edit application.properties
 mvn spring-boot:run
 ```
 
@@ -35,7 +36,7 @@ mvn spring-boot:run
             <version>1.0-SNAPSHOT</version>
         </dependency>
 ```
-### iii.Write java code
+### iii.Write java code in your application
 ```java
         // params that will be delivered while callback
         List<String> params = new ArrayList<>();
@@ -65,6 +66,8 @@ mvn spring-boot:run
         }
 ```
 You see, just like writing local java callback.
+
+### iv.run your application
 
 # 6.Advanced usage
 // todo
