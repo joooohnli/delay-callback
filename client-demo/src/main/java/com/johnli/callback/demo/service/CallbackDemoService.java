@@ -1,4 +1,4 @@
-package com.johnli.callback.service;
+package com.johnli.callback.demo.service;
 
 import com.johnli.callback.client.DelayCallback;
 import com.johnli.callback.client.DelayCallbackHelper;
