@@ -28,7 +28,7 @@ mvn spring-boot:run
 ```
 
 ### ii.Add dependency to your application
-```
+```xml
         <dependency>
             <groupId>com.johnli</groupId>
             <artifactId>delay-callback-client</artifactId>
@@ -36,7 +36,7 @@ mvn spring-boot:run
         </dependency>
 ```
 ### iii.Write java code
-```
+```java
         // params that will be delivered while callback
         List<String> params = new ArrayList<>();
         params.add("hello");
