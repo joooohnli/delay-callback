@@ -19,12 +19,12 @@ public class CallbackRequest implements Serializable, Validator {
     private String alias;
 
     /**
-     * 唯一id
+     * unique id
      */
     private String uid;
     /**
-     * 0.表示正常回调
-     * >0.表示第n次重试
+     * 0.first callback
+     * >0.nth retry
      */
     private int retryTh;
 

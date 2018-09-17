@@ -21,28 +21,28 @@ public class RetryStrategy implements Serializable, Validator {
     public static final int MAX_INTERVAL_DEFAULT = 86400;
 
     /**
-     * 重试次数
-     * <p> <0.非法参数
-     * <p> =0.不重试
-     * <p> >0.固定次数
+     * retry times
+     * <p> <0.illegal
+     * <p> =0.no retry
+     * <p> >0.n times
      */
     private int times = TIMES_DEFAULT;
     /**
-     * 重试类型
-     * <p>基数为interval
-     * <p>1.固定时间间隔
-     * <p>2.时间间隔倍数增长[interval, 2*interval, 3*interval, ..., n*interval]
-     * <p>3.时间间隔指数增长[interval, 2^1*interval, 2^2*interval, ... , 2^n*interval]
+     * retry types
+     * <p>base on interval
+     * <p>1.fixed interval
+     * <p>2.grow in multiples of interval[interval, 2*interval, 3*interval, ..., n*interval]
+     * <p>3.grow exponentially with interval[interval, 2^1*interval, 2^2*interval, ... , 2^n*interval]
      */
     private int type = TYPE_DEFAULT;
     /**
-     * 重试间隔
-     * <p>单位：秒
+     * retry interval
+     * <p>unit：second
      */
     private int interval = INTERVAL_DEFAULT;
     /**
-     * 最大重试间隔
-     * <p>单位：秒
+     * max retry interval
+     * <p>unit：second
      */
     private int maxInterval = MAX_INTERVAL_DEFAULT;
 

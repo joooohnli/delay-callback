@@ -14,20 +14,21 @@ import java.util.List;
 public class CallbackParam implements Serializable, Validator {
     private static final long serialVersionUID = -6562599855623010686L;
     /**
-     * 参数列表
+     * arguments list
      */
     private List<String> args;
     /**
-     * 延时时间
+     * seconds to delay
      */
     private int delaySeconds;
     /**
-     * 重试策略
+     * retry strategy
      */
     private RetryStrategy retryStrategy;
     /**
-     * 幂等key。重复注册时，以该值做幂等;为空则不做幂等
-     * <p>默认false</p>
+     * idempotent key<p></p>
+     * if this value is not empty, use it to ensure the registration is idempotent when same args under same alias are registered more than once;
+     * otherwise, will register callbacks for times.
      */
     private String idempotentKey;
 
