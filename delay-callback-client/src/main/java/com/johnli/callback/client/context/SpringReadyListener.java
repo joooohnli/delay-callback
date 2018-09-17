@@ -30,10 +30,10 @@ public class SpringReadyListener implements ApplicationListener<ContextRefreshed
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-        ApplicationContext applicationContext = event.getApplicationContext();
-        if (applicationContext.getParent() == null) {
-            return;
-        }
+//        ApplicationContext applicationContext = event.getApplicationContext();
+//        if (applicationContext.getParent() == null) {
+//            return;
+//        }
         if (!overrided.compareAndSet(false, true)) {
             return;
         }

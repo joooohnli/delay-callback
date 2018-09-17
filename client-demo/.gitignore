@@ -1,0 +1,14 @@
+*.iml
+/build
+/web/WEB-INF/lib
+/web/WEB-INF/classes
+/target
+.settings
+.classpath
+.project
+*.class
+hosts.properties
+.idea
+/bin/
+/disconf
+/logs

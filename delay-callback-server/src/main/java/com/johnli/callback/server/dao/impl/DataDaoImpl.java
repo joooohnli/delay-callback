@@ -20,11 +20,11 @@ import java.util.*;
  */
 @Repository
 public class DataDaoImpl implements DataDao {
-    private static final String KEY_TASK_ID = "callback:id";
-    private static final String KEY_TASK_DETAIL = "callback:detail";
-    private static final String KEY_TASK_COUNT_PREFIX = "callback:count:";
-    private static final String KEY_FAILURE_PREFIX = "callback:failure:";
-    private static final String LOCK_PREFIX = "callback:lock:";
+    private static final String KEY_TASK_ID = "delay:callback:id";
+    private static final String KEY_TASK_DETAIL = "delay:callback:detail";
+    private static final String KEY_TASK_COUNT_PREFIX = "delay:callback:count:";
+    private static final String KEY_FAILURE_PREFIX = "delay:callback:failure:";
+    private static final String LOCK_PREFIX = "delay:callback:lock:";
 
     @Override
     public List<CallbackIdPO> listIdsByRange(Date start, Date end, boolean desc, int offset, int count) {

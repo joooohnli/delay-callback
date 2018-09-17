@@ -23,7 +23,7 @@ import java.util.UUID;
 @EnableConfigurationProperties(CallbackProperties.class)
 public class LeaderAutoConfiguration implements InitializingBean, DisposableBean {
     private static final Logger LOGGER = LoggerFactory.getLogger(LeaderAutoConfiguration.class);
-    private static final String PATH = "/callback/leader";
+    private static final String PATH = "/delay/callback/leader";
 
     @Autowired
     private CuratorFramework curatorClient;

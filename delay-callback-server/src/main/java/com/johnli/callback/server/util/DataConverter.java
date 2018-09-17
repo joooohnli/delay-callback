@@ -16,7 +16,7 @@ public class DataConverter {
         po.setAlias(request.getAlias());
         po.setCallbackParam(request.getCallbackParam());
         po.setGroup(request.getGroup());
-        po.setDubboContext(JSON.toJSONString(RpcContext.getContext()));
+//        po.setDubboContext(JSON.toJSONString(RpcContext.getContext()));
 
         return po;
     }
