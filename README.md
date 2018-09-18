@@ -7,31 +7,31 @@ Designed to run specific code with a timer, which is a self-organising server wi
 
 # 2.Projects
 ## delay-callback-server
-The server persists the registered callback data, ensuring that the callback can always be invoked with retry strategy, and it's stateless, which means it can be scaled out easily.
+The server persists the registered callback data, ensuring that the callback can always be invoked with retry strategy. And it's stateless, so out-of-the-box, it can be scaled out easily.
 
-
-### Structure
+### Main components
 - **Facade**: register && unRegister
-- **ScanJob**: scheduled job scans available callback tasks. Master election will be made automatically if has more than one instance deployed.
+- **ScanJob**: scheduled job scans available callback tasks. Master election will be made automatically if you have more than one instance deployed.
 - **Distributor**: distributes callback tasks based on dubbo's loadbanlance that can be customed by configuration. 
-- **Processor**: processes callback tasks with distributed lock's protection.
+- **Processor**: processes callback tasks under protection of distributed lock.
 
 
 ### Dependencies
 [dubbo](http://dubbo.apache.org/en-us)/spring cloud/zookeeper/redis
 
 ## delay-callback-client
-The client encapsulates callback server discovery and callback client registry, and provides a helper to easily write registration and callback code.
+The client encapsulates communication detail between your application and the callback server, and provides a helper to easily write registration and callback code.
 
-### Structure
-
-- **Initializer**: init local callback 
+### Main components
+- **Initializer**: init local callback implementation 
 - **Registry**: register callback client to zookeeper
 - **Refer**: discover callabck server from zookeeper
 - **Helper**: ```DelayCallbackHelper```, the main class you will interact with:
 ```java
 public class DelayCallbackHelper {
     /**
+     * register callback
+     *
      * @param callbackParam params
      * @param delayCallback implementation of callback logic
      * @return unique id
@@ -42,7 +42,7 @@ public class DelayCallbackHelper {
      * cancel registration
      *
      * @param uid unique id
-     * @return
+     * @return result
      */
     public static UnRegisterResult unRegister(String uid) {...}
 }
@@ -53,7 +53,7 @@ public class DelayCallbackHelper {
 dubbo/spring
 
 ## delay-callback-interface
-common interfaces and objects of client and server
+common interfaces and objects used by client and server
 
 ## client-demo
 The demo shows how to use delay-callback-client to register callback and write callback logic.

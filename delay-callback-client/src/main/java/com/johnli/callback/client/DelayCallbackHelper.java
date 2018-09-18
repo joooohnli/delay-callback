@@ -1,12 +1,12 @@
 package com.johnli.callback.client;
 
+import com.johnli.callback.client.context.CallbackContextHolder;
 import com.johnli.callback.common.CallbackException;
 import com.johnli.callback.param.CallbackParam;
 import com.johnli.callback.request.RegisterRequest;
 import com.johnli.callback.request.UnRegisterRequest;
 import com.johnli.callback.result.RegisterResult;
 import com.johnli.callback.result.UnRegisterResult;
-import com.johnli.callback.client.context.CallbackContextHolder;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +18,8 @@ public class DelayCallbackHelper {
     private static final Logger LOGGER = LoggerFactory.getLogger(DelayCallbackHelper.class);
 
     /**
+     * register callback
+     *
      * @param callbackParam params
      * @param delayCallback implementation of callback logic
      * @return unique id
@@ -61,7 +63,7 @@ public class DelayCallbackHelper {
      * cancel registration
      *
      * @param uid unique id
-     * @return
+     * @return result
      */
     public static UnRegisterResult unRegister(String uid) {
         UnRegisterResult unRegisterResult = new UnRegisterResult();
