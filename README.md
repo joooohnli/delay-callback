@@ -114,4 +114,4 @@ You see, just like writing local java callback.
 // todo
 
 # 5.License
-Under the Apache 2.0 license.
+Apache Dubbo is under the Apache 2.0 license. See the [LICENSE](https://github.com/joooohnli/delay-callback/blob/master/LICENSE) file for details.
