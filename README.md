@@ -4,6 +4,15 @@
 Designed to run specific code with a timer, which is a self-organising server with loose coupling and high avaiability.
 
 ![delay-callback](https://joooohnli.github.io/images/delay-callback.png)
+## Features
+
+- The application registers callbacks and sets the execution time, which the server will invoked on arrival time.
+- The application can cancel a callback task before it's been invoked.
+- The server makes sure that a callback will be executed if it's retry strategy is properly seted during registration. 
+- The server ensures HA, you only need to deploy multiple instances.
+- Registration can be idempotent.
+- Idempotent of callback should be guaranteed by your application.
+- Easy to use, just like writing local java callback.
 
 # 2.Projects
 ## delay-callback-server
