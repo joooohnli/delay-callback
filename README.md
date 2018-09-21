@@ -3,7 +3,7 @@
 
 Designed to run specific code with a timer, which is a self-organising server with loose coupling and high avaiability.
 
-![delay-callback](https://user-images.githubusercontent.com/1615053/45608444-715ae880-ba85-11e8-8484-22494f1259a2.png)
+![delay-callback](https://joooohnli.github.io/images/delay-callback.png)
 
 # 2.Projects
 ## delay-callback-server
