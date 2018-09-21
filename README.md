@@ -60,7 +60,7 @@ The demo shows how to use delay-callback-client to register callback and write c
 
 # 3.Getting started
 ### i.Start server
-```
+```bash
 cd delay-callback-server
 # edit application.properties
 mvn spring-boot:run
