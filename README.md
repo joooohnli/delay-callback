@@ -1,4 +1,4 @@
-# [中文文档](https://joooohn.com/timer/callback/2018/09/21/delay_callback.html)
+# [中文文档](http://joooohn.com/timer/callback/2018/09/21/delay_callback.html)
 
 # 1.Overview
 
