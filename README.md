@@ -13,6 +13,7 @@ Designed to run specific code with a timer, which is a self-organising server wi
 - The server ensures HA, you only need to deploy multiple instances.
 - Registration can be idempotent.
 - Idempotent of callback should be guaranteed by your application.
+- Callback tasks are grouped by application name.
 - Easy to use, just like writing local java callback.
 
 # 2.Projects
