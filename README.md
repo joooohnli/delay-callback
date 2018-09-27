@@ -11,6 +11,7 @@ Designed to run specific code with a timer, which is a self-organising server wi
 - The application can cancel a callback task before it's been invoked.
 - The server makes sure that a callback will be executed if it's retry strategy is properly seted during registration. 
 - The server ensures HA, you only need to deploy multiple instances.
+- Callback time is accurate to the second.
 - Registration can be idempotent.
 - Idempotent of callback should be guaranteed by your application.
 - Callback tasks are grouped by application name.
