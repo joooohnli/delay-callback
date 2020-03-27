@@ -7,37 +7,36 @@ Designed to run specific code with a timer, which is a self-organising server wi
 ![delay-callback](https://joooohnli.github.io/images/delay-callback.png)
 ## Features
 
-- The application registers callbacks and sets the execution time, which the server will invoked on arrival time.
-- The application can cancel a callback task before it's been invoked.
-- The server makes sure that a callback will be executed if it's retry strategy is properly seted during registration. 
-- The server ensures HA, you only need to deploy multiple instances.
-- Callback time is accurate to the second.
-- Registration can be idempotent.
-- Idempotent of callback should be guaranteed by your application.
-- Callback tasks are grouped by application name.
-- Easy to use, just like writing local java callback.
+- Your application registers a callback whith exact trigger time that the callback server will then invoke.
+- Your application could cancel a callback before it's invocation arrival.
+- The callback server confirms callback invocation if that callback has retry strategy being set. 
+- The callback server is born with HA, you only need to deploy multiple instances.
+- Callback trigger time is accurate to second.
+- Registration can be idempotent. (while idempotent of callback invocation should be consideration of your application.)
+- Callbacks are grouped by your application name.
+- Easy to use, just like writing local java callbacks.
 
 # 2.Projects
 ## delay-callback-server
-The server persists the registered callback data, ensuring that the callback can always be invoked with retry strategy. And it's stateless, so out-of-the-box, it can be scaled out easily.
+The callback server persists registered callbacks (to `redis`), ensuring that callbacks will always be invoked. Besides, the callback server is stateless, so out-of-the-box, it can be scaled out easily.
 
 ### Main components
 - **Facade**: register && unRegister
 - **ScanJob**: scheduled job scans available callback tasks. Master election will be made automatically if you have more than one instance deployed.
 - **Distributor**: distributes callback tasks based on dubbo's loadbanlance that can be customed by configuration. 
-- **Processor**: processes callback tasks under protection of distributed lock.
+- **Processor**: processes callbacks under protection of distributed lock.
 
 
 ### Dependencies
 [dubbo](http://dubbo.apache.org/en-us)/spring cloud/zookeeper/redis
 
 ## delay-callback-client
-The client encapsulates communication detail between your application and the callback server, and provides a helper to easily write registration and callback code.
+The callback client encapsulates communication detail between your application and the callback server, and provides a helper to easily write registration and callback code.
 
 ### Main components
-- **Initializer**: init local callback implementation 
-- **Registry**: register callback client to zookeeper
-- **Refer**: discover callabck server from zookeeper
+- **Initializer**: initializes local callback implementation 
+- **Registry**: registers callback client to zookeeper
+- **Refer**: discovers callabck server from zookeeper
 - **Helper**: ```DelayCallbackHelper```, the main class you will interact with:
 ```java
 public class DelayCallbackHelper {
@@ -68,9 +67,9 @@ dubbo/spring
 common interfaces and objects used by client and server
 
 ## client-demo
-The demo shows how to use delay-callback-client to register callback and write callback logic.
+Shows how to use delay-callback-client to register callback and write callback logic.
 
-# 3.Getting started
+# 3.Get started
 ### i.Start server
 ```bash
 cd delay-callback-server
@@ -122,8 +121,8 @@ You see, just like writing local java callback.
 
 ### iv.run your application
 
-# 4.Advanced usage
+# 4.Advanced usages
 // todo
 
 # 5.License
-Apache Dubbo is under the Apache 2.0 license. See the [LICENSE](https://github.com/joooohnli/delay-callback/blob/master/LICENSE) file for details.
+delay-callback is under the Apache 2.0 license. See the [LICENSE](https://github.com/joooohnli/delay-callback/blob/master/LICENSE) file for details.
