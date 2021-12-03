@@ -6,6 +6,18 @@
 version: 2
 updates:
   - package-ecosystem: "maven" # See documentation for possible values
-    directory: "/" # Location of package manifests
+    directory: "/client-demo/" # Location of package manifests
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "maven" # See documentation for possible values
+    directory: "/delay-callback-client/" # Location of package manifests
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "maven" # See documentation for possible values
+    directory: "/delay-callback-interface/" # Location of package manifests
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "maven" # See documentation for possible values
+    directory: "/delay-callback-server/" # Location of package manifests
     schedule:
       interval: "daily"
